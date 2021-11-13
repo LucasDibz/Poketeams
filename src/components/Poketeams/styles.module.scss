@@ -1,0 +1,24 @@
+.title {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  margin-left: 1rem;
+  font-weight: 700;
+}
+
+.pokeballsContainer {
+  display: flex;
+  padding: 0.8rem;
+  margin: 0 auto;
+  width: 85%;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+}
+
+.buttonsContainer {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+  gap: 0.5rem;
+  margin: 0 2rem;
+}
