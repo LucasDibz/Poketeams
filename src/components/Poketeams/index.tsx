@@ -1,3 +1,5 @@
+import Image from 'next/image';
+
 import { Pokeball } from '../Pokeball';
 
 import styles from './styles.module.scss';
@@ -7,7 +9,7 @@ export const PokeTeams = () => {
     <>
       <div className={styles.title}>
         <p>My team</p>
-        <span>edit</span>
+        <Image src='/assets/edit.svg' alt='edit' width={10} height={10} />
       </div>
 
       <div className={styles.pokeballsContainer}>
@@ -20,8 +22,18 @@ export const PokeTeams = () => {
       </div>
 
       <div className={styles.buttonsContainer}>
-        <button>Remove</button>
-        <button>Confirm</button>
+        <button disabled>
+          <Image src='/assets/delete.svg' alt='delete' width={35} height={35} />
+        </button>
+
+        <button disabled>
+          <Image
+            src='/assets/confirm.svg'
+            alt='confirm'
+            width={35}
+            height={35}
+          />
+        </button>
       </div>
     </>
   );

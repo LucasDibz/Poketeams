@@ -5,9 +5,43 @@
 
 .pokelistContainer {
   display: flex;
-  align-items: center;
-  justify-content: center;
+  flex-wrap: wrap;
   gap: 2rem;
+
   margin: 0 auto;
-  width: 85%;
+  width: 90%;
+  height: 20rem;
+
+  overflow-y: scroll;
+
+  div {
+    width: 4rem;
+
+    span {
+      margin-bottom: -0.5rem;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      border-radius: 50%;
+
+      width: 0.5rem;
+      height: 0.5rem;
+      padding: 0.85rem;
+
+      font-weight: 800;
+      color: whitesmoke;
+      background: #90adc6;
+    }
+  }
+}
+
+.pokemonTypes {
+  margin-top: 0.25rem;
+  display: flex;
+  gap: 0.25rem;
+
+  div {
+    height: 0.25rem;
+    border-radius: 2rem;
+  }
 }
