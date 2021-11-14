@@ -1,10 +1,12 @@
 import Image from 'next/image';
+import { useSelectedPokemons } from '../../contexts/SelectedPokemonsContext';
 
 import { Pokeball } from '../Pokeball';
 
 import styles from './styles.module.scss';
 
 export const PokeTeams = () => {
+  const { selectedPokemons } = useSelectedPokemons();
   return (
     <>
       <div className={styles.title}>
@@ -13,12 +15,12 @@ export const PokeTeams = () => {
       </div>
 
       <div className={styles.pokeballsContainer}>
-        <Pokeball />
-        <Pokeball />
-        <Pokeball />
-        <Pokeball />
-        <Pokeball />
-        <Pokeball />
+        <Pokeball pokemon={selectedPokemons[0]} />
+        <Pokeball pokemon={selectedPokemons[1]} />
+        <Pokeball pokemon={selectedPokemons[2]} />
+        <Pokeball pokemon={selectedPokemons[3]} />
+        <Pokeball pokemon={selectedPokemons[4]} />
+        <Pokeball pokemon={selectedPokemons[5]} />
       </div>
 
       <div className={styles.buttonsContainer}>
