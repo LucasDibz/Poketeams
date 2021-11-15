@@ -1,5 +1,8 @@
 import Image from 'next/image';
 
+import { useSelectedPokemons } from '../../contexts/SelectedPokemonsContext';
+import { poketypeColors } from '../../utils/pokeTypeColors';
+
 import styles from './styles.module.scss';
 
 type Pokemon = {
@@ -14,12 +17,23 @@ interface PokeballProps {
 }
 
 export function Pokeball({ pokemon }: PokeballProps) {
+  const { isEditing, setIsEditing } = useSelectedPokemons();
+
+  function handleEditSelectedPokemon() {
+    isEditing ? setIsEditing(undefined) : setIsEditing(pokemon?.id);
+  }
+
   return (
     <div
       className={styles.container}
-      style={{
-        filter: 'brightness(80%) grayscale(70%)',
-      }}
+      style={
+        isEditing && isEditing !== pokemon?.id
+          ? {
+              filter: 'brightness(80%) grayscale(70%)',
+            }
+          : {}
+      }
+      onClick={handleEditSelectedPokemon}
     >
       <div>
         <Image
@@ -31,7 +45,19 @@ export function Pokeball({ pokemon }: PokeballProps) {
       </div>
 
       {pokemon && (
-        <div className={styles.selectedPokemon} draggable={false}>
+        <div
+          className={styles.selectedPokemon}
+          draggable={false}
+          style={
+            isEditing && isEditing === pokemon?.id
+              ? {
+                  filter: `drop-shadow(2px 4px 6px ${
+                    poketypeColors[pokemon.types[0]]
+                  })`,
+                }
+              : {}
+          }
+        >
           <Image
             src={pokemon.image}
             width={77}

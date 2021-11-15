@@ -13,6 +13,10 @@ type Pokemons = {
   types: string[];
 };
 
+interface HomeProps {
+  pokemons: Pokemons[];
+}
+
 export const getServerSideProps: GetServerSideProps = async () => {
   const { results } = await fetch(
     'https://pokeapi.co/api/v2/pokemon?limit=50',
@@ -39,10 +43,6 @@ export const getServerSideProps: GetServerSideProps = async () => {
     },
   };
 };
-
-interface HomeProps {
-  pokemons: Pokemons[];
-}
 
 const Home: NextPage<HomeProps> = ({ pokemons }) => {
   return (

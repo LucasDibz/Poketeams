@@ -2,8 +2,31 @@
   display: flex;
   align-items: center;
   gap: 0.5rem;
-  margin-left: 1rem;
-  font-weight: 700;
+  margin-top: 1rem;
+
+  > input {
+    margin-left: 1rem;
+    font-weight: 800;
+    border: none;
+    padding: 0 0.5rem;
+    background: none;
+
+    min-width: 3.5rem;
+    color: #333652;
+
+    &:disabled {
+      filter: opacity(0.6);
+    }
+
+    &:not(:disabled) {
+      border-bottom: 1px solid #333652;
+      border-radius: 0.25rem;
+    }
+
+    &:focus {
+      outline: none;
+    }
+  }
 }
 
 .pokeballsContainer {
@@ -22,12 +45,15 @@
   gap: 0.5rem;
   margin: 0 2rem;
 
-  button {
+  > button {
     border: none;
     background: none;
 
+    transition: 0.2s ease-in-out;
+
     &:hover:not(:disabled) {
       cursor: pointer;
+      transform: scale(1.1);
     }
 
     &:disabled {

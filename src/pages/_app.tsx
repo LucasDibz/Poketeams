@@ -1,13 +1,16 @@
 import type { AppProps } from 'next/app';
 
 import { SelectedPokemonsContextProvider } from '../contexts/SelectedPokemonsContext';
+import { TeamsContextProvider } from '../contexts/TeamsContext';
 
 import '../styles/globals.scss';
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
     <SelectedPokemonsContextProvider>
-      <Component {...pageProps} />
+      <TeamsContextProvider>
+        <Component {...pageProps} />
+      </TeamsContextProvider>
     </SelectedPokemonsContextProvider>
   );
 }

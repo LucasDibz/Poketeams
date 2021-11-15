@@ -1,9 +1,5 @@
 import { createContext, ReactNode, useContext, useState } from 'react';
 
-interface SelectedPokemonsContextProps {
-  children: ReactNode;
-}
-
 type Pokemon = {
   id: number;
   name: string;
@@ -13,7 +9,9 @@ type Pokemon = {
 
 type SelectedPokemonsContextData = {
   selectedPokemons: Pokemon[];
-  SetSelectedPokemons: (selectedPokemons: Pokemon[]) => void;
+  setSelectedPokemons: (selectedPokemons: Pokemon[]) => void;
+  isEditing?: number;
+  setIsEditing: (isEditing?: number) => void;
 };
 
 const selectedPokemonsContext = createContext<SelectedPokemonsContextData>(
@@ -22,8 +20,10 @@ const selectedPokemonsContext = createContext<SelectedPokemonsContextData>(
 
 export function SelectedPokemonsContextProvider({
   children,
-}: SelectedPokemonsContextProps) {
-  const [selectedPokemons, SetSelectedPokemons] = useState<Pokemon[]>([
+}: {
+  children: ReactNode;
+}) {
+  const [selectedPokemons, setSelectedPokemons] = useState<Pokemon[]>([
     {
       id: 1,
       image:
@@ -39,10 +39,11 @@ export function SelectedPokemonsContextProvider({
       types: ['fire', 'flying'],
     },
   ]);
+  const [isEditing, setIsEditing] = useState<number>();
 
   return (
     <selectedPokemonsContext.Provider
-      value={{ selectedPokemons, SetSelectedPokemons }}
+      value={{ selectedPokemons, setSelectedPokemons, isEditing, setIsEditing }}
     >
       {children}
     </selectedPokemonsContext.Provider>

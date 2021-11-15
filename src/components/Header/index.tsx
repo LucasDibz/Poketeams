@@ -1,3 +1,5 @@
+import Link from 'next/link';
+
 import styles from './styles.module.scss';
 
 interface HeaderProps {
@@ -8,7 +10,9 @@ export function Header({ title }: HeaderProps) {
   return (
     <header className={styles.container}>
       <div className={styles.divisor} />
-      <h1>{title}</h1>
+      <Link href={title === 'TEAMS' ? '/teams' : '/'} passHref>
+        <h1>{title}</h1>
+      </Link>
     </header>
   );
 }
