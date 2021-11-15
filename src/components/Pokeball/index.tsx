@@ -2,8 +2,10 @@ import Image from 'next/image';
 
 import { useSelectedPokemons } from '../../contexts/SelectedPokemonsContext';
 import { poketypeColors } from '../../utils/pokeTypeColors';
+import BottomPokeballSVG from './BottomPokeballSVG';
 
 import styles from './styles.module.scss';
+import TopPokeballSVG from './TopPokeballSVG';
 
 type Pokemon = {
   id: number;
@@ -35,14 +37,10 @@ export function Pokeball({ pokemon }: PokeballProps) {
       }
       onClick={handleEditSelectedPokemon}
     >
-      <div>
-        <Image
-          src='/assets/pokeball.svg'
-          alt='pokeball'
-          width={77}
-          height={77}
-        />
-      </div>
+      <TopPokeballSVG
+        fill={pokemon ? poketypeColors[pokemon?.types[0]] : '#fff'}
+      />
+      <BottomPokeballSVG />
 
       {pokemon && (
         <div

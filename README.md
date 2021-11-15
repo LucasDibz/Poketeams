@@ -1,5 +1,5 @@
 ## 📸
-![image](https://user-images.githubusercontent.com/49247275/141767969-d958f012-2f6a-4967-8ead-a90e86d377b2.png)
+![image](https://user-images.githubusercontent.com/49247275/141800362-3b16f296-f81c-41a7-b8de-10305506fcee.png)
 ## 📱 App
 
 The idea of the App is to create a Pokémon team builder, where you must choose 6 monsters to compose your team and view the teams already created.
