@@ -29,7 +29,7 @@ export const getServerSideProps: GetServerSideProps = async () => {
     const result = await fetch(url).then((res) => res.json());
     const image = result.sprites.other['official-artwork'].front_default;
     const types = result.types.map(
-      (type: { type: { name: string } }) => type.type.name,
+      ({ type }: { type: { name: string } }) => type.name,
     );
 
     pokemons.push({ id: result.id, name, image, types });
