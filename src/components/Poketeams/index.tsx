@@ -9,7 +9,7 @@ import { Pokeball } from '../Pokeball';
 import styles from './styles.module.scss';
 
 export const PokeTeams = () => {
-  const [teamName, SetTeamName] = useState('My team');
+  const [teamName, setTeamName] = useState('My team');
   const [isEditingTeamName, setIsEditingTeamName] = useState(false);
 
   const { isEditing, setIsEditing } = useSelectedPokemons();
@@ -51,7 +51,7 @@ export const PokeTeams = () => {
         <input
           type='text'
           value={teamName}
-          onChange={(e) => SetTeamName(e.target.value)}
+          onChange={(e) => setTeamName(e.target.value)}
           style={{
             width: `${teamName.length + 2}ch`,
           }}
