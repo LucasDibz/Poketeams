@@ -7,21 +7,21 @@ type Pokemon = {
   types: string[];
 };
 
-type PokemonTeam = {
+type PokemonsTeam = {
   id: number;
   name: string;
   pokemons: Pokemon[];
 };
 
 type TeamsContextData = {
-  teams: PokemonTeam[];
-  setTeams: (teams: PokemonTeam[]) => void;
+  teams: PokemonsTeam[];
+  setTeams: (teams: PokemonsTeam[]) => void;
 };
 
 const teamsContext = createContext<TeamsContextData>({} as TeamsContextData);
 
 export function TeamsContextProvider({ children }: { children: ReactNode }) {
-  const [teams, setTeams] = useState<PokemonTeam[]>([
+  const [teams, setTeams] = useState<PokemonsTeam[]>([
     {
       id: 1,
       name: 'Team Rocketseat',
