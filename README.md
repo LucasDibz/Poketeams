@@ -2,7 +2,7 @@
 ![image](https://user-images.githubusercontent.com/49247275/141800362-3b16f296-f81c-41a7-b8de-10305506fcee.png)
 ## 📱 App
 
-The idea of the App is to create a Pokémon team builder, where you must choose 6 monsters to compose your team and view the teams already created.
+The idea of the App is to create a Pokémon teams builder, where you must choose 6 monsters to compose your team and view the teams already created.
 
 - [PokéAPI](https://pokeapi.co/docs/v2#pokemon) - Public API for the data
 
